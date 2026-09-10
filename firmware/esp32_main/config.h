@@ -50,7 +50,7 @@
 // ----------------------------------------------------------------------------
 #define PIN_SERVO_PAN       18   // Horizontal Pan Servo (GPIO 18 / D18)
 #define PIN_SERVO_TILT      19   // Vertical Tilt Servo (GPIO 19 / D19)
-#define PIN_SERVO_STEERING  16   // TowerPro High-Torque Steering Servo (GPIO 16 / D16)
+#define PIN_SERVO_STEERING  34   // TowerPro High-Torque Steering Servo (GPIO 16 / D16)
 
 #define SERVO_MIN_PULSE_US  500  // Standard servo min pulse in microseconds
 #define SERVO_MAX_PULSE_US  2400 // Standard servo max pulse in microseconds
@@ -80,7 +80,7 @@
 // ----------------------------------------------------------------------------
 // AUXILIARY HARDWARE PINS (Spotlight Relay & Piezo Horn)
 // ----------------------------------------------------------------------------
-#define PIN_RELAY_SPOTLIGHT 2    // Spotlight Relay Pin (GPIO 4 / D4)
+#define PIN_RELAY_SPOTLIGHT 35    // Spotlight Relay Pin (GPIO 4 / D4)
 #define PIN_PIEZO_BUZZER    21   // Active Piezo Horn Pin (GPIO 21 / D21)
 
 // Relay Active Trigger Level:
