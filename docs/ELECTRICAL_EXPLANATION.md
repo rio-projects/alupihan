@@ -1,4 +1,4 @@
-# Project Alupihan — Electrical Architecture & Rationale
+# Project Saver — Electrical Architecture & Rationale
 
 **Document Version:** 1.0  
 **Section:** 5.D (Comprehensive Wiring & Schematic Explanation)
@@ -7,7 +7,7 @@
 
 ## 1. System Electrical Overview & Signal Flow
 
-The electrical architecture of **Project Alupihan** is engineered for high performance, electrical noise isolation, and stable multi-actuator operation.
+The electrical architecture of **Project Saver** is engineered for high performance, electrical noise isolation, and stable multi-actuator operation.
 
 ### Dual Electrical Rail Topology
 Operating high-power inductive loads (4x TT Gear Motors), high-torque servos, and a 60W motorcycle spotlight alongside sensitive 3.3V digital microcontrollers requires strict power isolation to avoid voltage sag, electromagnetic interference (EMI), and unexpected microcontroller resets (brownout loops).

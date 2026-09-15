@@ -1,4 +1,4 @@
-# Project Alupihan — Engineering Research & Design Calculations
+# Project Saver — Engineering Research & Design Calculations
 
 **Document Version:** 1.0  
 **Section:** 5.G (RADD Research / Study Documentation)
@@ -7,7 +7,7 @@
 
 ## 1. Skid-Steer Locomotion Kinematics
 
-Rover **Alupihan** uses a **4WD Skid-Steer Differential Drive** mechanism. Unlike Ackerman steering (found in standard automobiles with front-wheel turning knuckles), skid-steer rovers rotate by driving left and right wheel sets at different relative speeds and directions.
+Rover **Saver** uses a **4WD Skid-Steer Differential Drive** mechanism. Unlike Ackerman steering (found in standard automobiles with front-wheel turning knuckles), skid-steer rovers rotate by driving left and right wheel sets at different relative speeds and directions.
 
 ### Mathematical Kinematics Model
 Let:

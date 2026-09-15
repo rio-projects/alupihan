@@ -1,6 +1,6 @@
-# Project Alupihan — 4WD Environmental Surveillance Rover
+# Project Saver — 4WD Environmental Surveillance Rover
 
-**Project Name:** Alupihan  
+**Project Name:** Saver  
 **Assigned Personnel:** Sir Vince Zamora and Sir Heinrich Del Rosario  
 **Purpose:** Lightweight 4WD remote-controlled rover capable of environmental surveillance via live video streaming over a local Wi-Fi network.  
 **Target Users:** Hobbyists, robotics students, and remote inspection teams.
@@ -21,14 +21,14 @@
 ## 2. Directory & Repository Structure
 
 ```
-alupihan/
+saver/
 ├── firmware/
 │   ├── esp32_main/           # Arduino IDE Sketch for Main ESP32 Logic & WebSockets
 │   │   ├── esp32_main.ino
 │   │   └── config.h
 │   └── esp32_cam/            # Arduino IDE Sketch for ESP32-CAM MJPEG Streaming
 │       └── esp32_cam.ino
-├── AlupihanRover/            # Native Android Mobile Control Application (Kotlin + Jetpack Compose)
+├── SaverRover/            # Native Android Mobile Control Application (Kotlin + Jetpack Compose)
 │   ├── app/                  # Application module containing Kotlin UI & Network sources
 │   └── build.gradle.kts      # Gradle build configuration
 └── docs/                     # Complete Dissemination Package (Section 5 Items A-K)
@@ -68,12 +68,12 @@ alupihan/
 4. Connect FTDI Programmer (TX->RX, RX->TX, GPIO 0 to GND during boot).
 5. Click Upload and reset board.
 
-### C. Mobile Application (AlupihanRover)
+### C. Mobile Application (SaverRover)
 1. Open **Android Studio** (2024.2+ or Android Studio Ladybug recommended).
-2. Select **Open** and navigate to the `AlupihanRover/` directory.
+2. Select **Open** and navigate to the `SaverRover/` directory.
 3. Allow Gradle to finish sync.
 4. Connect an Android phone (with USB Debugging enabled) or start an Android Emulator.
-5. Click **Run 'app'** or run `./gradlew assembleDebug` inside `AlupihanRover/`.
+5. Click **Run 'app'** or run `./gradlew assembleDebug` inside `SaverRover/`.
 
 ---
 
@@ -82,9 +82,9 @@ alupihan/
 1. Power on the rover using the main switch on the 3S battery enclosure.
 2. Wait for the startup chime from the Piezo Buzzer.
 3. On your mobile phone, connect to the Wi-Fi Access Point:
-   - **SSID:** `Alupihan_Rover`
+   - **SSID:** `Saver_Rover`
    - **Password:** `rover1234`
-4. Open the **Alupihan Rover App**.
+4. Open the **Saver Rover App**.
 5. Tap **CONNECT**. The live camera feed and controls will activate.
 
 ---

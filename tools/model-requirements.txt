@@ -1,0 +1,12 @@
+# Python 3.11. Install CPU torch/torchvision first (see docs/YOLO_INTEGRATION.md).
+ultralytics==8.3.161
+numpy==1.26.4
+tensorflow==2.19.0
+tf-keras==2.19.0
+onnx==1.17.0
+onnx2tf==1.26.3
+onnxslim==0.1.59
+onnxruntime==1.22.0
+onnx-graphsurgeon==0.5.8
+sng4onnx==1.0.4
+ai-edge-litert==1.4.0

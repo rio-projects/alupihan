@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * PROJECT ALUPIHAN — SIMPLE RELAY HARDWARE BLINK TEST
+ * PROJECT SAVER — SIMPLE RELAY HARDWARE BLINK TEST
  * Target Pin: GPIO 4 (D4)
  * ============================================================================
  */
@@ -11,7 +11,7 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   Serial.println("\n=======================================================");
-  Serial.println("   ALUPIHAN — SIMPLE RELAY BLINK TEST (GPIO 4 / D4)");
+  Serial.println("   SAVER — SIMPLE RELAY BLINK TEST (GPIO 4 / D4)");
   Serial.println("=======================================================");
   
   pinMode(PIN_RELAY, OUTPUT);

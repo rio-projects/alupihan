@@ -2,7 +2,7 @@
 #define CONFIG_H
 
 // ============================================================================
-// PROJECT ALUPIHAN - ESP32 MAIN CONTROLLER HARDWARE PIN DEFINITIONS & CONFIG
+// PROJECT SAVER - ESP32 MAIN CONTROLLER HARDWARE PIN DEFINITIONS & CONFIG
 // Author: Sir Vince Zamora & Sir Heinrich Del Rosario
 // Target Hardware: ESP32-WROOM-32 NodeMCU / DevKit
 // ============================================================================
@@ -18,7 +18,7 @@
 #define STATION_PASS        "JfvyqXrK"
 
 // Access Point Mode Credentials (Fallback Hotspot)
-#define AP_SSID             "Alupihan_Rover"
+#define AP_SSID             "Saver_Rover"
 #define AP_PASS             "rover1234"
 
 // Network Ports
@@ -50,7 +50,7 @@
 // ----------------------------------------------------------------------------
 #define PIN_SERVO_PAN       18   // Horizontal Pan Servo (GPIO 18 / D18)
 #define PIN_SERVO_TILT      19   // Vertical Tilt Servo (GPIO 19 / D19)
-#define PIN_SERVO_STEERING  34   // TowerPro High-Torque Steering Servo (GPIO 16 / D16)
+#define PIN_SERVO_STEERING  34   // TowerPro High-Torque Steering Servo (GPIO 34 / D34)
 
 #define SERVO_MIN_PULSE_US  500  // Standard servo min pulse in microseconds
 #define SERVO_MAX_PULSE_US  2400 // Standard servo max pulse in microseconds
@@ -80,7 +80,7 @@
 // ----------------------------------------------------------------------------
 // AUXILIARY HARDWARE PINS (Spotlight Relay & Piezo Horn)
 // ----------------------------------------------------------------------------
-#define PIN_RELAY_SPOTLIGHT 35    // Spotlight Relay Pin (GPIO 4 / D4)
+#define PIN_RELAY_SPOTLIGHT 35   // Spotlight Relay Pin (GPIO 35 / D35)
 #define PIN_PIEZO_BUZZER    21   // Active Piezo Horn Pin (GPIO 21 / D21)
 
 // Relay Active Trigger Level:

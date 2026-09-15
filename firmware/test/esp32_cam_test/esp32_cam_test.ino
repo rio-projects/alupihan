@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project Alupihan — Subsystem Test #1: ESP32-CAM WebSocket & HTTP Stream Test
+ * Project Saver — Subsystem Test #1: ESP32-CAM WebSocket & HTTP Stream Test
  * Target Board: AI Thinker ESP32-CAM (OV2640 / OV7670)
  * ============================================================================
  */
@@ -299,7 +299,7 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   Serial.println("\n=======================================================");
-  Serial.println("  PROJECT ALUPIHAN — ESP32-CAM WEBSOCKET FIRMWARE");
+  Serial.println("  PROJECT SAVER — ESP32-CAM WEBSOCKET FIRMWARE");
   Serial.println("=======================================================");
 
   camera_config_t config;

@@ -1,6 +1,6 @@
-# Project Alupihan — Wiring & Schematic Specifications
+# Project Saver — Wiring & Schematic Specifications
 
-This document defines the complete electrical connections, pin assignments, and power distribution topology used in the functional prototype of **Project Alupihan**.
+This document defines the complete electrical connections, pin assignments, and power distribution topology used in the functional prototype of **Project Saver**.
 
 ---
 

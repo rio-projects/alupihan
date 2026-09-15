@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project Alupihan — Subsystem Test: 4WD Differential Wheel Drive (Skid-Steer)
+ * Project Saver — Subsystem Test: 4WD Differential Wheel Drive (Skid-Steer)
  * Target Board: Main ESP32 (NodeMCU / ESP32 WROOM-32)
  *
  * Hardware Pin Mapping:
@@ -47,7 +47,7 @@ IPAddress local_IP(192, 168, 18, 88);
 IPAddress gateway(192, 168, 18, 1);
 IPAddress subnet(255, 255, 255, 0);
 
-const char* AP_SSID = "Alupihan_Rover";
+const char* AP_SSID = "Saver_Rover";
 const char* AP_PASS = "rover1234";
 
 // Auxiliary Pins
@@ -292,7 +292,7 @@ void setup() {
   delay(1000);
 
   Serial.println("\n=======================================================");
-  Serial.println("  PROJECT ALUPIHAN — 4WD & STEERING CALIBRATION SKETCH");
+  Serial.println("  PROJECT SAVER — 4WD & STEERING CALIBRATION SKETCH");
   Serial.println("=======================================================");
 
   // 1. Keep Motor Driver Disabled during Pin Setup to prevent any boot glitch

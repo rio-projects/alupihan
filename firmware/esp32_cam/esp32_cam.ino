@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * PROJECT ALUPIHAN — ESP32-CAM MJPEG VIDEO STREAMING FIRMWARE
+ * PROJECT SAVER — ESP32-CAM MJPEG VIDEO STREAMING FIRMWARE
  * Author: Sir Vince Zamora & Sir Heinrich Del Rosario
  * Hardware Target: ESP32-CAM (AI-Thinker Model with OV2640 Sensor)
  * ============================================================================
@@ -25,7 +25,7 @@ IPAddress local_IP(192, 168, 18, 89);
 IPAddress gateway(192, 168, 18, 1);
 IPAddress subnet(255, 255, 255, 0);
 
-const char* AP_SSID = "Alupihan_Rover";
+const char* AP_SSID = "Saver_Rover";
 const char* AP_PASS = "rover1234";
 
 // ----------------------------------------------------------------------------
@@ -142,7 +142,7 @@ void setup() {
   Serial.setDebugOutput(true);
   delay(1000);
   Serial.println("\n=======================================================");
-  Serial.println("  PROJECT ALUPIHAN — ESP32-CAM SURVEILLANCE MODULE");
+  Serial.println("  PROJECT SAVER — ESP32-CAM SURVEILLANCE MODULE");
   Serial.println("=======================================================");
 
   // Hardware Power-Cycle / Hardware Reset of OV2640 Camera Sensor via PWDN (GPIO 32)

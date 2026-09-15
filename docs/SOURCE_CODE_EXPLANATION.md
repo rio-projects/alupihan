@@ -1,4 +1,4 @@
-# Project Alupihan — Comprehensive Source Code Architecture & Breakdown
+# Project Saver — Comprehensive Source Code Architecture & Breakdown
 
 **Document Version:** 1.0  
 **Section:** 5.F (Comprehensive Source Code Explanation)
@@ -7,17 +7,17 @@
 
 ## 1. System Code Architecture & Data Flow
 
-The software stack of **Project Alupihan** is divided into three primary modules:
+The software stack of **Project Saver** is divided into three primary modules:
 1. **ESP32 Main Firmware (`firmware/esp32_main/`):** Written in C++ using Arduino framework. Manages Wi-Fi, WebSockets server, JSON decoding, TB6612FNG motor control, Servo positioning, Relay switching, and Piezo audio.
 2. **ESP32-CAM Firmware (`firmware/esp32_cam/`):** Written in C++. Drives the OV2640 camera sensor and hosts an HTTP MJPEG stream server.
-3. **Android Mobile App (`AlupihanRover/`):** Native Android UI built with Kotlin and Jetpack Compose, providing touch controls, servo sliders, MJPEG stream view, and WebSocket telemetry communication using OkHttp.
+3. **Android Mobile App (`SaverRover/`):** Native Android UI built with Kotlin and Jetpack Compose, providing touch controls, servo sliders, MJPEG stream view, and WebSocket telemetry communication using OkHttp.
 
 ---
 
 ## 2. Firmware Breakdown (`esp32_main.ino`)
 
 ### A. Modular Design & Libraries Used
-- **`WiFi.h` & `WebServer.h`:** Manages SoftAP mode (`Alupihan_Rover`, `rover1234`) and local HTTP diagnostic endpoint.
+- **`WiFi.h` & `WebServer.h`:** Manages SoftAP mode (`Saver_Rover`, `rover1234`) and local HTTP diagnostic endpoint.
 - **`WebSocketsServer.h`:** Runs an asynchronous WebSocket server on port 8080. WebSockets provide ultra-low latency (<20ms) bidirectional data transfer compared to traditional polling HTTP GET requests.
 - **`ArduinoJson.h`:** Parses incoming JSON control packets from the Android app.
 - **`ESP32Servo.h`:** Employs ESP32 hardware timers to produce precise 50Hz PWM signals for the Pan, Tilt, and TowerPro metal gear servos.
@@ -52,7 +52,7 @@ ledcAttachPin(PIN_MOTOR_PWMB, PWM_CHAN_MOTORS_B);
 
 ---
 
-## 4. Android Mobile App Breakdown (`AlupihanRover/`)
+## 4. Android Mobile App Breakdown (`SaverRover/`)
 
 ### A. Architecture & Components
 - **`MainActivity.kt`:** App entry point locking orientation to landscape, enabling edge-to-edge display, and initializing the `RoverScreen` composable.

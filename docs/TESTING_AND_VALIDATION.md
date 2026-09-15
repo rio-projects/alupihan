@@ -1,4 +1,4 @@
-# Project Alupihan — Testing and Validation Suite
+# Project Saver — Testing and Validation Suite
 
 **Document Version:** 1.0  
 **Section:** 6 (Testing and Validation)
@@ -22,7 +22,7 @@
 ## 2. Integration & System Functional Validation
 
 ### Test Case IT-01: Full Motion & Video Streaming Stress Test
-- **Procedure:** Connect `AlupihanRover` Android app to `Alupihan_Rover` Access Point. Drive rover continuously in forward, reverse, and pivot turns while panning the camera and streaming video.
+- **Procedure:** Connect `SaverRover` Android app to `Saver_Rover` Access Point. Drive rover continuously in forward, reverse, and pivot turns while panning the camera and streaming video.
 - **Expected Outcome:** No latency degradation, zero motor stall, camera stream remains online without buffering.
 - **Result:** Successfully validated. Average round-trip ping time < 18ms. Video latency < 120ms.
 

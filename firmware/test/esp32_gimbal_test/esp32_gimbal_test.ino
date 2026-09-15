@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project Alupihan — Subsystem Test #3: 2-Axis Pan-Tilt Servo Gimbal Test
+ * Project Saver — Subsystem Test #3: 2-Axis Pan-Tilt Servo Gimbal Test
  * Target Board: Main ESP32 (NodeMCU / WROOM-32)
  *
  * Hardware Wiring:
@@ -22,7 +22,7 @@
 const char* STATION_SSID = "HUAWEI-PBZM";
 const char* STATION_PASS = "JfvyqXrK";
 
-const char* AP_SSID = "Alupihan_Rover";
+const char* AP_SSID = "Saver_Rover";
 const char* AP_PASS = "rover1234";
 
 #define PAN_SERVO_PIN  18  // Main ESP32 GPIO 18 (Pan Servo Signal)
@@ -104,7 +104,7 @@ void setup() {
   delay(1000);
 
   Serial.println("\n=======================================================");
-  Serial.println("  PROJECT ALUPIHAN — 2-AXIS PAN-TILT SERVO TEST");
+  Serial.println("  PROJECT SAVER — 2-AXIS PAN-TILT SERVO TEST");
   Serial.println("=======================================================");
 
   // Attach Servos with standard 500us - 2400us pulse widths

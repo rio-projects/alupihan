@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * PROJECT ALUPIHAN — MAIN ESP32 CONTROLLER FIRMWARE
+ * PROJECT SAVER — MAIN ESP32 CONTROLLER FIRMWARE
  * Author: Sir Vince Zamora & Sir Heinrich Del Rosario
  * Hardware Target: ESP32-WROOM-32 Development Board
  * 
@@ -72,7 +72,7 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   Serial.println("\n=======================================================");
-  Serial.println("   PROJECT ALUPIHAN — MAIN ESP32 CONTROLLER SYSTEM");
+  Serial.println("   PROJECT SAVER — MAIN ESP32 CONTROLLER SYSTEM");
   Serial.println("=======================================================");
 
   setupHardware();
@@ -81,7 +81,7 @@ void setup() {
   setupWebSockets();
 
   playToneSequence(1); // Boot chime
-  Serial.println(">> [ALUPIHAN] Initialization Complete. System Ready.");
+  Serial.println(">> [SAVER] Initialization Complete. System Ready.");
   Serial.println("=======================================================\n");
 }
 
@@ -211,7 +211,7 @@ void setupWiFi() {
 // ----------------------------------------------------------------------------
 void setupWebServer() {
   server.on("/", []() {
-    server.send(200, "text/json", "{\"status\":\"online\",\"system\":\"Alupihan Main ESP32 Controller\"}");
+    server.send(200, "text/json", "{\"status\":\"online\",\"system\":\"Saver Main ESP32 Controller\"}");
   });
   server.begin();
   Serial.println(">> [HTTP] Server Started on Port " + String(HTTP_SERVER_PORT));
@@ -265,6 +265,12 @@ void processCommand(uint8_t clientNum, String message) {
 
   // 1. Locomotion Motor & Synchronized Steering Servo Command
   if (strcmp(type, "move") == 0) {
+    if (espSafetyLatch) {
+      // Hardware Safety Latch active: Enforce zero motor speeds
+      setMotorSpeeds(0, 0);
+      setSteeringAngle(steeringCenterAngle);
+      return;
+    }
     int leftSpeed = doc["left"] | 0;   // -255 to 255
     int rightSpeed = doc["right"] | 0; // -255 to 255
     setMotorSpeeds(leftSpeed, rightSpeed);
@@ -288,18 +294,33 @@ void processCommand(uint8_t clientNum, String message) {
     }
     setGimbalAngles(pan, tilt);
   }
-  // 3. Spotlight / Auxiliary Relay Toggle Command (GPIO 2 / D2)
+  // 3. Spotlight / Auxiliary Relay Toggle Command (GPIO 35)
   else if (strcmp(type, "spotlight") == 0 || strcmp(type, "relay") == 0) {
     bool state = doc["state"].as<bool>();
     setRelayState(state);
-    Serial.printf("💡 [RELAY] State: %s | GPIO 2 Output: %s\n",
+    Serial.printf("💡 [RELAY] State: %s | GPIO%d Output: %s (ActiveMode: %s)\n",
                   spotlightState ? "ON" : "OFF",
-                  (spotlightState ? currentRelayActiveState : !currentRelayActiveState) == HIGH ? "HIGH (3.3V)" : "LOW (0V)");
+                  PIN_RELAY_SPOTLIGHT,
+                  (digitalRead(PIN_RELAY_SPOTLIGHT) == HIGH ? "HIGH (3.3V)" : "LOW (0V)"),
+                  currentRelayActiveState == LOW ? "Active-LOW" : "Active-HIGH");
   }
   // 4. Piezo Horn Trigger Command
   else if (strcmp(type, "horn") == 0) {
     bool state = doc["state"].as<bool>();
     digitalWrite(PIN_PIEZO_BUZZER, state ? HIGH : LOW);
+  }
+  // 5. Hardware Safety Latch Control
+  else if (strcmp(type, "halt") == 0 || strcmp(type, "human_alert") == 0) {
+    espSafetyLatch = true;
+    setMotorSpeeds(0, 0);
+    digitalWrite(PIN_PIEZO_BUZZER, HIGH);
+    Serial.println("🚨 [SAFETY LATCH] Hardware Lock Activated!");
+  }
+  else if (strcmp(type, "clear_alert") == 0 || strcmp(type, "acknowledge") == 0) {
+    espSafetyLatch = false;
+    digitalWrite(PIN_PIEZO_BUZZER, LOW);
+    setMotorSpeeds(0, 0);
+    Serial.println("🟢 [SAFETY LATCH] Hardware Lock Cleared!");
   }
 }
 
@@ -361,7 +382,9 @@ void setGimbalAngles(float pan, float tilt) {
 void setRelayState(bool state) {
   spotlightState = state;
   pinMode(PIN_RELAY_SPOTLIGHT, OUTPUT);
-  digitalWrite(PIN_RELAY_SPOTLIGHT, spotlightState ? LOW : HIGH);
+  uint8_t onState = currentRelayActiveState;
+  uint8_t offState = (currentRelayActiveState == LOW) ? HIGH : LOW;
+  digitalWrite(PIN_RELAY_SPOTLIGHT, spotlightState ? onState : offState);
 }
 
 // ----------------------------------------------------------------------------
@@ -386,9 +409,11 @@ void checkSerialCalibration() {
     } else if (c == 'r' || c == 'R') {
       numBuffer = "";
       setRelayState(!spotlightState);
-      Serial.printf("💡 [RELAY TEST] State: %s | GPIO 2 Output: %s\n",
+      Serial.printf("💡 [RELAY TEST] State: %s | GPIO%d Output: %s (ActiveMode: %s)\n",
                     spotlightState ? "ON" : "OFF",
-                    (spotlightState ? currentRelayActiveState : !currentRelayActiveState) == HIGH ? "HIGH (3.3V)" : "LOW (0V)");
+                    PIN_RELAY_SPOTLIGHT,
+                    (digitalRead(PIN_RELAY_SPOTLIGHT) == HIGH ? "HIGH (3.3V)" : "LOW (0V)"),
+                    currentRelayActiveState == LOW ? "Active-LOW" : "Active-HIGH");
     } else if (c == 'i' || c == 'I') {
       numBuffer = "";
       currentRelayActiveState = (currentRelayActiveState == LOW) ? HIGH : LOW;

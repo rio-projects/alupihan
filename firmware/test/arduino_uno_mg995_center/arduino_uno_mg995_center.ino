@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project Alupihan — Utility Tool: MG995 Servo Steering Center Calibration
+ * Project Saver — Utility Tool: MG995 Servo Steering Center Calibration
  * Target Board: Arduino Uno (ATmega328P)
  *
  * Purpose: Moves the TowerPro MG995 steering servo on Pin 6 to exactly 90°

@@ -1,13 +1,13 @@
 /*
  * ============================================================================
- * PROJECT ALUPIHAN — ESP32 AP & WEBSOCKET COMMUNICATION TEST SKETCH
+ * PROJECT SAVER — ESP32 AP & WEBSOCKET COMMUNICATION TEST SKETCH
  * Author: Sir Vince Zamora & Sir Heinrich Del Rosario
  * Target: Main ESP32 Development Board (ESP32-WROOM-32)
  * 
  * Objective:
- *   1. Create Wi-Fi Access Point ("Alupihan_Rover" / "rover1234") at 192.168.4.1.
+ *   1. Create Wi-Fi Access Point ("Saver_Rover" / "rover1234") at 192.168.4.1.
  *   2. Run WebSocket server on Port 8080 and HTTP Diagnostics on Port 80.
- *   3. Print all incoming commands from the AlupihanRover app directly to 
+ *   3. Print all incoming commands from the SaverRover app directly to 
  *      the Serial Monitor (115200 Baud) in real time.
  * ============================================================================
  */
@@ -26,7 +26,7 @@
 const char* STATION_SSID = "HUAWEI-PBZM";  // Replace with your Home Wi-Fi Name
 const char* STATION_PASS = "JfvyqXrK";  // Replace with your Home Wi-Fi Password
 
-const char* AP_SSID = "Alupihan_Rover";
+const char* AP_SSID = "Saver_Rover";
 const char* AP_PASS = "rover1234";
 
 const int WEBSOCKET_PORT = 8080;
@@ -111,7 +111,7 @@ void setup() {
   delay(1000);
 
   Serial.println("\n=======================================================");
-  Serial.println("  PROJECT ALUPIHAN — ESP32 TEST SKETCH");
+  Serial.println("  PROJECT SAVER — ESP32 TEST SKETCH");
   Serial.println("=======================================================");
 
   IPAddress ip;
@@ -140,7 +140,7 @@ void setup() {
   // 2. Initialize HTTP Server
   server.on("/", []() {
     String html = "<html><body style='font-family:sans-serif; text-align:center; padding:20px; background:#121212; color:#fff;'>";
-    html += "<h1>Project Alupihan — ESP32 Test Server</h1>";
+    html += "<h1>Project Saver — ESP32 Test Server</h1>";
     html += "<p>Status: <b>ONLINE</b></p>";
     html += "<p>WebSocket Port: <b>8080</b></p>";
     html += "</body></html>";

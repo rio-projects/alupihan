@@ -1,4 +1,4 @@
-# Project Alupihan — Component Testing Suite
+# Project Saver — Component Testing Suite
 
 This folder contains isolated, standalone unit test sketches for individual hardware components before full system integration.
 
@@ -10,7 +10,7 @@ This folder contains isolated, standalone unit test sketches for individual hard
 Verify that the **ESP32-CAM** module initializes its camera sensor, creates a Wi-Fi Access Point, and serves a live MJPEG video stream.
 
 ### Location
-[`firmware/test/esp32_cam_test/esp32_cam_test.ino`](file:///home/vincezamora/alupihan/firmware/test/esp32_cam_test/esp32_cam_test.ino)
+[`firmware/test/esp32_cam_test/esp32_cam_test.ino`](file:///home/vincezamora/saver/firmware/test/esp32_cam_test/esp32_cam_test.ino)
 
 ### Instructions (USB Type-C Plug & Play)
 
@@ -39,17 +39,17 @@ Verify that the **ESP32-CAM** module initializes its camera sensor, creates a Wi
 ## Test #2: ESP32 AP & WebSockets Communication Test (`esp32_ap_test/`)
 
 ### Objective
-Verify that the **Main ESP32** initializes its Access Point (`Alupihan_Rover`), starts the WebSocket server on Port 8080, accepts connections from the `AlupihanRover` app / ESP32-CAM, and prints received commands directly to the Arduino Serial Monitor in real time.
+Verify that the **Main ESP32** initializes its Access Point (`Saver_Rover`), starts the WebSocket server on Port 8080, accepts connections from the `SaverRover` app / ESP32-CAM, and prints received commands directly to the Arduino Serial Monitor in real time.
 
 ### Location
-[`firmware/test/esp32_ap_test/esp32_ap_test.ino`](file:///home/vincezamora/alupihan/firmware/test/esp32_ap_test/esp32_ap_test.ino)
+[`firmware/test/esp32_ap_test/esp32_ap_test.ino`](file:///home/vincezamora/saver/firmware/test/esp32_ap_test/esp32_ap_test.ino)
 
 ### Instructions
 1. Open `esp32_ap_test.ino` in **Arduino IDE**.
 2. Select Board: **ESP32 Dev Module**, select Port, and click **Upload**.
 3. Open **Serial Monitor** at **115200 Baud**.
-4. Connect your phone's Wi-Fi to **`Alupihan_Rover`** (Password: `rover1234`).
-5. Open the **AlupihanRover** app (or emulator) on your phone.
+4. Connect your phone's Wi-Fi to **`Saver_Rover`** (Password: `rover1234`).
+5. Open the **SaverRover** app (or emulator) on your phone.
 6. **Pass Criteria:** 
    - Serial Monitor prints `[WEBSOCKET] Client Connected`.
    - Dragging joystick, pressing Spotlight, Horn, or Pan-Tilt buttons prints formatted JSON command logs in real time.

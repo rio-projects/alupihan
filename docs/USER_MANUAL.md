@@ -1,4 +1,4 @@
-# Project Alupihan — Basic User Manual
+# Project Saver — Basic User Manual
 
 **Document Version:** 1.0  
 **Target Audience:** End-users, hobbyists, inspection operators.
@@ -37,8 +37,8 @@ Flip the main power switch located on the chassis side panel.
 
 ### Step 2: Mobile App Connection
 1. Turn on Wi-Fi on your mobile phone or tablet.
-2. Select network `Alupihan_Rover` and enter password `rover1234`.
-3. Launch the **Alupihan Mobile Control App**.
+2. Select network `Saver_Rover` and enter password `rover1234`.
+3. Launch the **Saver Mobile Control App**.
 4. Press **CONNECT**.
 
 ### Step 3: Steering & Locomotion Controls

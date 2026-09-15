@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project Alupihan — Standalone Motor Driver Forward Test
+ * Project Saver — Standalone Motor Driver Forward Test
  * Target Board: Main ESP32 (NodeMCU / ESP32 WROOM-32)
  *
  * Purpose: Simple isolated test script to run all 4WD motors FORWARD.
@@ -39,7 +39,7 @@ void setup() {
   delay(1000);
 
   Serial.println("\n=======================================================");
-  Serial.println("    PROJECT ALUPIHAN — MOTOR FORWARD TEST");
+  Serial.println("    PROJECT SAVER — MOTOR FORWARD TEST");
   Serial.println("=======================================================");
 
   // 1. Configure Direction & Standby Pins as OUTPUT

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * PROJECT ALUPIHAN — STANDALONE 2-AXIS PAN-TILT SERVO TEST SKETCH
+ * PROJECT SAVER — STANDALONE 2-AXIS PAN-TILT SERVO TEST SKETCH
  * Author: Sir Vince Zamora & Sir Heinrich Del Rosario
  * Target Board: ESP32-WROOM-32 DevKit / NodeMCU
  * File Path: firmware/test/esp32_pantilt_test/esp32_pantilt_test.ino
@@ -34,7 +34,7 @@
 const char* STATION_SSID = "HUAWEI-PBZM";
 const char* STATION_PASS = "JfvyqXrK";
 
-const char* AP_SSID      = "Alupihan_Rover";
+const char* AP_SSID      = "Saver_Rover";
 const char* AP_PASS      = "rover1234";
 
 #define PAN_SERVO_PIN   18  // GPIO 18 (D18) Horizontal Pan Servo Signal
@@ -238,7 +238,7 @@ void setup() {
   delay(1000);
 
   Serial.println("\n=======================================================");
-  Serial.println("  PROJECT ALUPIHAN — PAN & TILT SERVO TEST SKETCH");
+  Serial.println("  PROJECT SAVER — PAN & TILT SERVO TEST SKETCH");
   Serial.println("=======================================================");
   Serial.println("  Pan Pin : GPIO 18 (D18)");
   Serial.println("  Tilt Pin: GPIO 19 (D19)");
